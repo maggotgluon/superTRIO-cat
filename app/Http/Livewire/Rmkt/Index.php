@@ -13,6 +13,7 @@ class Index extends Component
     public $step, $phone,$currentVet;
     public $otp_code,$vet_code;
     public $offer_1,$offer_2,$offer_3;
+    public $errorStatus;
     public $client_data;
     public $vet,$vetall;
     public $vet_province,$vet_city,$vet_area,$vet_id;
@@ -33,19 +34,23 @@ class Index extends Component
     }
     public function requestOTP(){
         // validate phone field and database
-        // dd(  );
+        // dd($validatePhone);
         $validatedData = $this->validate([
             'phone' => ['required', 'numeric',
             // 'digits:10','min:10',
             'regex:/^([0-9\s\(\)]*)$/'],
         ]);
         // todo:request otp
-
         // next to 1
-        if(Client::where('phone',$this->phone)->count()){
+        $client=Client::firstWhere('phone',$this->phone);
+        if($client){
+            // dd($client);
+            // dd(rmkt_client::all(),rmkt_client::firstWhere('client_id',$client->client_code));
+            // if status pending or not activated go to old loop
             $this->next(1);
         }else{
-            return redirect(route('index'));
+            $this->next(-2);
+            // return redirect(route('index'));
         }
     }
     public function validateOTP(){
@@ -59,7 +64,7 @@ class Index extends Component
         // next to 2
         // validate 
         $this->loadclientdata();
-        $this->next(2);
+        $this->next(3);
     }
 
     public function loadclientdata(){
@@ -86,8 +91,13 @@ class Index extends Component
     }
     public function verifyVetCode(){
         $verify=$this->vet_code==$this->vet_id;
-        
-        if($verify){
+        $check = $this->offer_2||$this->offer_3;
+        if($verify && $check){
+            if($this->client_data->active_status=='activated'){
+                $this->errorStatus=2;
+                // $this->next(7);
+                return;
+            }
             //create client with re remark
             // dd($this->client_data);
             
@@ -125,7 +135,7 @@ class Index extends Component
                     'active_status'=>'activated'
                 ]);
     
-                $client_data->client_code = 'TRIO'.Str::padLeft($client_data->id, 5, '0').'[rmkt]';
+                $client_data->client_code = 'TRIO'.Str::padLeft($client_data->id, 5, '0');
                 $client_data->save();
             } catch (\Throwable $th) {
                 throw $th;
@@ -135,7 +145,16 @@ class Index extends Component
             $this->client_data=$client_data;
             $this->next(7);
         }else{
-            dd('code wrong',$this->vet_code,$this->vet_id);
+            if(!$verify){
+                $this->errorStatus=1;
+                $this->vet_code=null;
+            }
+            if($check){
+                $this->errorStatus=1;
+                $this->vet_code=null;
+            }
+            
+
         }
     }
     public function loadAddr(){

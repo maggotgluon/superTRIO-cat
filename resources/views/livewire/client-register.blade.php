@@ -38,13 +38,13 @@
         <!-- <h3> Step 1</h3> -->
         <!-- $status -->
         <div class="text-center mt-8  py-4">
-            ฟรี! ลงทะเบียนรับคำปรึกษา <br>
-            และเข้าร่วมโปรแกรม Super TRIO <br>
-            โปรแกรมปกป้องสุนัขจากปรสิตร้ายที่อันตรายถึงชีวิต
-
+            ฟรี! ลงทะเบียนรับคำปรึกษา<br>
+            และรับสิทธิพิเศษเข้าร่วม<br>
+            โปรแกรม LOVE solution cat PLUS<br>
+            โปรแกรมปกป้องปรสิตสำหรับคนรักแมว <br>
         </div>
         <div class="grid gap-2 pb-8">
-            <p>ข้อมูลเจ้าของสุนัข</p>
+            <p>ข้อมูลเจ้าของแมว</p>
             <x-input wire:model.defer="firstname" label="ชื่อ" placeholder="ชื่อ" required />
             <x-input wire:model.defer="lastname" label="นามสกุล" placeholder="นามสกุล" required />
             <x-input wire:model.defer="phone" maxlength="10" minlength="10"
@@ -88,20 +88,11 @@
             </h3>
         </div>
         <div class="max-h-[50vh] overflow-scroll p-4">
-            <p class="my-4">
-                บริษัท โซเอทิส (ประเทศไทย) จำกัด (“<b>บริษัทฯ</b>”) เห็นความสำคัญในการคุ้มครองข้อมูลส่วนบุคคลของท่าน ตามที่กำหนดไว้ในพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 บริษัทฯ จึงได้จัดทำหนังสือขอความยินยอมสำหรับลูกค้าในการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของท่านในฐานะลูกค้า ผู้ใช้สินค้า หรือผู้รับบริการของบริษัท เพื่อขอความยินยอมจากท่านสำหรับวัตถุประสงค์ที่บริษัทฯ ไม่สามารถเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของท่านด้วยฐานทางกฎหมายอื่นได้
-            </p>
-            <p class="my-4"><b>
-                    ข้าพเจ้าให้ความยินยอมต่อบริษัทฯ ในการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของข้าพเจ้าเพื่อวัตถุประสงค์ต่อไปนี้
-                </b></p>
-            <p class="my-4">
-                เก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของข้าพเจ้า <b>เพื่อวัตถุประสงค์ในการทำการตลาดและการติดต่อสื่อสารกับข้าพเจ้า ซึ่งบริษัทฯ ไม่สามารถอ้างอิงฐานทางกฎหมายอื่นได้</b> เช่น การแจ้งข่าวสารด้านการตลาด การทำการตลาดแบบตอกย้ำความสนใจ (Re-Marketing) โฆษณา สิทธิประโยชน์ การขาย ข้อเสนอพิเศษ การแจ้งเตือน จดหมายข่าว รายงานความคืบหน้า ประกาศ กิจกรรมส่งเสริมการขาย ข่าวสารและข้อมูลที่เกี่ยวกับผลิตภัณฑ์หรือบริการของบริษัท และพันธมิตรทางธุรกิจของบริษัทฯ
-            </p>
-            <p class="my-4">
-                เก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลที่ละเอียดอ่อนของข้าพเจ้า เช่น ข้อมูลศาสนา ที่ปรากฎบนสำเนาบัตรประจำตัวประชาชน หรือเอกสารที่ทางราชการออกให้ <b>เพื่อวัตถุประสงค์ในการยืนยันตัวตนและระบุตัวตนของข้าพเจ้า</b>
-            </p>
-            <p class="my-4">
-                ข้าพเจ้าขอรับรองและยืนยันว่า ข้าพเจ้าได้อ่านและทราบถึงรายละเอียดของนโยบายความเป็นส่วนตัวของบริษัทฯ ที่ปรากฎ ณ <a href="https://www2.zoetis.co.th/privacy-policy" target="_blank"> https://www2.zoetis.co.th/privacy-policy </a> ซึ่งอธิบายวิธีการที่บริษัทฯ เก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของข้าพเจ้า
+            <p class="my-4">    บริษัท โซเอทิส (ประเทศไทย) จำกัด (“<b>บริษัทฯ</b>”) เห็นความสำคัญในการคุ้มครองข้อมูลส่วนบุคคลของท่าน ตามที่กำหนดไว้ในพระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ. 2562 บริษัทฯ จึงได้จัดทำหนังสือขอความยินยอมสำหรับลูกค้าในการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของท่านในฐานะลูกค้า ผู้ใช้สินค้า หรือผู้รับบริการของบริษัท เพื่อขอความยินยอมจากท่านสำหรับวัตถุประสงค์ที่บริษัทฯ ไม่สามารถเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของท่านด้วยฐานทางกฎหมายอื่นได้
+            </p><p class="my-4">    ข้าพเจ้าให้ความยินยอมต่อบริษัทฯ ในการเก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของข้าพเจ้าเพื่อวัตถุประสงค์ต่อไปนี้
+            </p><p class="my-4">    เก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของข้าพเจ้า เพื่อวัตถุประสงค์ในการทำการตลาดและการติดต่อสื่อสารกับข้าพเจ้า ซึ่งบริษัทฯ ไม่สามารถอ้างอิงฐานทางกฎหมายอื่นได้ เช่น การแจ้งข่าวสารด้านการตลาด การทำการตลาดแบบตอกย้ำความสนใจ (Re-Marketing) โฆษณา สิทธิประโยชน์ การขาย ข้อเสนอพิเศษ การแจ้งเตือน จดหมายข่าว รายงานความคืบหน้า ประกาศ กิจกรรมส่งเสริมการขาย ข่าวสารและข้อมูลที่เกี่ยวกับผลิตภัณฑ์หรือบริการของบริษัท และพันธมิตรทางธุรกิจของบริษัทฯ
+            </p><p class="my-4">    เก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลที่ละเอียดอ่อนของข้าพเจ้า เช่น ข้อมูลศาสนา ที่ปรากฎบนสำเนาบัตรประจำตัวประชาชน หรือเอกสารที่ทางราชการออกให้ เพื่อวัตถุประสงค์ในการยืนยันตัวตนและระบุตัวตนของข้าพเจ้า
+            </p><p class="my-4">    ข้าพเจ้าขอรับรองและยืนยันว่า ข้าพเจ้าได้อ่านและทราบถึงรายละเอียดของนโยบายความเป็นส่วนตัวของบริษัทฯ ที่ปรากฎ ณ https://www2.zoetis.co.th/privacy-policy ซึ่งอธิบายวิธีการที่บริษัทฯ เก็บรวบรวม ใช้ หรือเปิดเผยข้อมูลส่วนบุคคลของข้าพเจ้า
             </p>
         </div>
 
@@ -142,7 +133,7 @@
 
         <div class="py-2 text-center mt-auto" wire:loading.remove>
             <x-button lg right-icon="chevron-right" primary class="bg-gradient-to-br from-gradient-start to-gradient-end rounded-2xl"
-             wire:click="varifyOTP" type="button" label="ถัดไป" />
+            wire:click="varifyOTP" type="button" label="ถัดไป" />
         </div>
         <div class="py-2 text-center flex justify-center mt-auto" wire:loading>
             กำลังดำเนินการ...
@@ -151,21 +142,21 @@
 
     <div class="setup-content  min-h-[70vh] flex flex-col {{ $currentStep != 2 ? 'hidden' : '' }}" id="step-2">
         <div class="mt-8 pb-2">
-            <h3 class="text-center text-xl pb-2 font-bold text-primary-blue"> กรุณากรอกข้อมูลสุนัข </h3>
+            <h3 class="text-center text-xl pb-2 font-bold text-primary-blue"> กรุณากรอกข้อมูลแมว </h3>
             <p class="text-center">
-                ที่ต้องการรับคำปรึกษาและเข้าร่วม<br>
-                โปรแกรม Super TRIO<br>
+                ที่ต้องการเข้าร่วมโปรแกรม<br>
+                LOVE solution cat PLUS
             </p>
         </div>
 
         <div class="grid gap-2 pb-8">
-            <x-input wire:model.defer="pet_name" label="ชื่อสุนัข" placeholder="ชื่อสุนัข" />
-            <x-input wire:model.defer="pet_breed" label="ชื่อพันธุ์สุนัข" placeholder="ชื่อพันธุ์สุนัข" />
+            <x-input wire:model.defer="pet_name" label="ชื่อสุนัข" placeholder="ชื่อแมว" />
+            <x-input wire:model.defer="pet_breed" label="ชื่อพันธุ์สุนัข" placeholder="ชื่อสายพันธุ์แมว" />
 
             <!-- <x-native-select label="ชื่อพันธุ์สุนัข" wire:model.lazy="pet_breed" placeholder="เลือกพันธุ์สุนัข" :options="['German Shepherd','Bulldog','Labrador Retriever','Golden Retriever','French Bulldog','Siberian Husky','Poodle','Alaskan Malamute','Chihuahua','Border Collie','Afghan Hound','Airedale Terrier']" /> -->
 
 
-            เลือกช่วงน้ำหนักของสุนัข
+            เลือกช่วงน้ำหนักของแมว
             <div class="grid grid-cols-2 gap-2">
                 <span class="my-2">
                     <x-radio id="weigth-1" value="1.25-2.5 กก." label="1.25-2.5 กก." wire:model.defer="pet_weight" />
@@ -176,7 +167,7 @@
                 <span class="my-2">
                     <x-radio id="weigth-3" value="5.1-10 กก." label="5.1-10 กก." wire:model.defer="pet_weight" />
                 </span>
-                <span class="my-2">
+                {{-- <span class="my-2">
                     <x-radio id="weigth-4" value="10.1-20 กก." label="10.1-20 กก." wire:model.defer="pet_weight" />
                 </span>
                 <span class="my-2">
@@ -184,7 +175,7 @@
                 </span>
                 <span class="my-2">
                     <x-radio id="weigth-6" value="40.1-60 กก." label="40.1-60 กก." wire:model.defer="pet_weight" />
-                </span>
+                </span> --}}
             </div>
 
             <div class="grid grid-cols-2 gap-2">
@@ -200,7 +191,7 @@
             <!-- <x-button lg outline icon="chevron-left" primary
                 wire:click="back(1)" type="button" label="Back" /> -->
             <x-button lg right-icon="chevron-right" primary class="bg-gradient-to-br from-gradient-start to-gradient-end rounded-2xl"
-             wire:click="secondStepSubmit" type="button" label="ถัดไป" />
+            wire:click="secondStepSubmit" type="button" label="ถัดไป" />
         </div>
         <div class="py-2 text-center flex justify-center mt-auto" wire:loading>
             กำลังดำเนินการ...
@@ -209,9 +200,11 @@
 
     <div class="row setup-content  min-h-[70vh] flex flex-col {{ $currentStep != 3 ? 'hidden' : '' }} " id="step-3">
         <div class="mt-8 pb-2">
-            <h3 class="text-center">เลือกคลินิก หรือโรงพยาบาลสัตว์ </h3>
+            <h3 class="text-center">
+                เลือกคลินิก หรือโรงพยาบาลสัตว์
+            </h3>
             <p class="text-center">ที่ต้องการรับคำปรึกษาและ<br>
-                    เข้าร่วมโปรแกรม Super TRIO</p>
+                เข้าร่วมโปรแกรม LOVE solution cat PLUS</p>
         </div>
 
         <div class="mt-4" wire:init="loadAddr">
@@ -265,7 +258,7 @@
             <!-- <x-button lg outline icon="chevron-left" primary
                 wire:click="back(1)" type="button" label="Back" /> -->
             <x-button wire:loading.attr="disabled"  lg right-icon="chevron-right" primary class="bg-gradient-to-br from-gradient-start to-gradient-end rounded-2xl"
-             wire:click="thirdStepSubmit" type="button" label="ถัดไป" />
+            wire:click="thirdStepSubmit" type="button" label="ถัดไป" />
         </div>
         <div class="py-2 text-center flex justify-center mt-auto" wire:loading>
             กำลังดำเนินการ...
@@ -276,19 +269,19 @@
         <div class="mt-8 pb-2">    
         <h3 class="text-center text-xl my-8 p-4 font-bold text-white bg-primary-blue"> การลงทะเบียนเสร็จสมบูรณ์ </h3>
         <p class="text-center">
-            ท่านได้รับสิทธิ์ รับคำปรึกษา <br>
-            และเข้าร่วมโปรแกรม Super TRIO<br>
-            โปรแกรมปกป้องสุนัขจากปรสิตร้ายที่อันตรายถึงชีวิต<br>
+            ท่านได้รับสิทธิ์ รับคำปรึกษา<br>
+            และเข้าร่วมโปรแกรม LOVE solution cat PLUS<br>
+            โปรแกรมปกป้องปรสิตสำหรับคนรักแมว<br>
 
         </p>
         </div>
         <img class="my-4 px-8" src="{{url('/app-banner.png')}}" />
         <p class="text-center">
-            สามารถ พาน้อง {{$pet_name}}<br>
+            สามารถพา {{$pet_name}}<br>
             ขนาด {{$pet_weight}}<br>
-            ไปรับคำปรึกษา<br>
-            และเข้าร่วมโปรแกรม Super TRIO<br>
-            ได้ที่ {{$vet_id?App\Models\Vet::find($vet_id)->vet_name:'-'}} ครับ<br>
+            ไปรับคำปรึกษา <br>
+            และเข้าร่วมโปรแกรม LOVE solution cat PLUS<br>
+            ได้ที่โรงพยาบาล/คลินิก {{$vet_id?App\Models\Vet::find($vet_id)->vet_name:'-'}} ครับ<br>
         </p>
         <p class="text-center text-xs text-secondary-red">
             กรุณากดรับสิทธิ์ขณะที่ท่านอยู่ที่คลินิกตามที่ลงทะเบียน<br>

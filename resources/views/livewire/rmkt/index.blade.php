@@ -6,6 +6,31 @@
     {{-- no special link --}}
     @switch($step)
 
+    @case(-2)
+        <div class="setup-content min-h-[70vh] flex flex-col transition-all" id="step-0">
+            {{-- phone number input --}}
+            <div class="mt-8 pb-2">
+                <p class="mb-4 text-center">
+                    ไม่พบข้อมูลลงทะเบียน
+                </p>
+            </div>
+            <div class="py-2 text-center mt-auto " wire:loading.remove>
+                <x-button lg right-icon="chevron-right" primary
+                    class="rounded-2xl" wire:click="next(0)"
+                    type="button" label="ลองใหม่อีกครั้ง" />
+
+                <x-button lg right-icon="chevron-right" primary
+                    class="bg-gradient-to-br from-gradient-start to-gradient-end rounded-2xl" 
+                    wire:click="goHome"
+                    type="button" label="ลงทะเบียนลูกค้าใหม่" />
+                    {{-- ตรวจสอบสิทธิ์ --}}
+
+            </div>
+            <div class="py-2 text-center flex justify-center mt-auto" wire:loading>
+                กำลังดำเนินการ...
+            </div>
+        </div>
+    @break
         @case(-1)
             <div class="setup-content min-h-[70vh] flex flex-col transition-all" id="step-0">
                 {{-- phone number input --}}
@@ -15,16 +40,19 @@
                     เข้าโปรแกรม Super TRIO<br>
                     โปรแกรมปกป้องสุนัขจากปรสิตร้ายที่อันตรายถึงชีวิต
                     </p>
+                    <img class="my-8 px-8" src="{{url('/app-banner.png')}}"/>
                 </div>
                 <div class="py-2 text-center mt-auto " wire:loading.remove>
-                    <x-button lg right-icon="chevron-right" primary
-                        class="rounded-2xl" wire:click="goHome"
-                        type="button" label="ลงทะเบียนลูกค้าใหม่" />
 
                     <x-button lg right-icon="chevron-right" primary
-                        class="bg-gradient-to-br from-gradient-start to-gradient-end rounded-2xl" 
+                        class="bg-gradient-to-br from-gradient-start to-gradient-end rounded-2xl m-2" 
                         wire:click="next"
-                        type="button" label="เข้าสู่ระบบ" />
+                        type="button" label="เคยลงทะเบียน" />
+
+                    <x-button lg right-icon="chevron-right" primary
+                        class="rounded-2xl m-2" wire:click="goHome"
+                        type="button" label="ยังไม่เคยลงทะเบียน" />
+
                         {{-- ตรวจสอบสิทธิ์ --}}
 
                 </div>
@@ -39,22 +67,20 @@
                 <div class="mt-8 pb-2">
                     <p class="mb-4">
                     กรุณากรอกหมายเลขโทรศัพท์ ที่ท่านเคยลง ทะเบียนรับสิทธิ์
-                    เข้าโปรแกรม Super TRIO
+                    เข้าโปรแกรม Super TRIO<br>
                     โปรแกรมปกป้องสุนัขจากปรสิตร้ายที่ อันตรายถึงชีวิต
                     </p>
-
+                    {{-- <p>ไม่พบข้อมูลลงทะเบียน</p> --}}
                     <x-input label="หมายเลขโทรศัพท์" maxlength="10" minlength="10"
                         placeholder="หมายเลขโทรศัพท์" pattern="[0-9]*" inputmode="tel" required wire:model.defer="phone" />
                 </div>
                 <img class="my-4 px-8" src="{{url('/app-banner.png')}}"/>
                 <div class="py-2 text-center mt-auto " wire:loading.remove>
-                    <x-button lg right-icon="chevron-right" primary
-                        class="rounded-2xl" wire:click="requestOTP"
-                        type="button" label="ลงทะเบียนลูกค้าใหม่" />
 
                     <x-button lg right-icon="chevron-right" primary
-                        class="bg-gradient-to-br from-gradient-start to-gradient-end rounded-2xl" wire:click="requestOTP"
-                        type="button" label="เข้าสู่ระบบ" />
+                        class="bg-gradient-to-br from-gradient-start to-gradient-end rounded-2xl" 
+                        wire:click="requestOTP"
+                        type="button" label="ตรวจสอบสิทธิ์" />
                         {{-- ตรวจสอบสิทธิ์ --}}
 
                 </div>
@@ -135,12 +161,12 @@
 
                 </div>
                 <div class="flex justify-between py-2 text-center mt-auto" wire:loading.remove>
-                    <x-button lg right-icon="chevron-right" primary
-                        class="bg-gradient-to-br from-gradient-start to-gradient-end rounded-2xl" {{-- wire:click="varifyOTP" --}}
-                        wire:click="savermktdata" type="button" label="ยืนยัน" />
                     <x-button lg {{-- right-icon="chevron-right"  --}} primary
                         class="bg-gradient-to-br  from-warning-600 to-negative-600 rounded-2xl" {{-- wire:click="varifyOTP" --}}
                         wire:click="next(4)" type="button" label="เปลี่ยนสถานที่รับสิทธิ์" />
+                    <x-button lg right-icon="chevron-right" primary
+                        class="bg-gradient-to-br from-gradient-start to-gradient-end rounded-2xl" {{-- wire:click="varifyOTP" --}}
+                        wire:click="savermktdata" type="button" label="ยืนยัน" />
                 </div>
                 <div class="py-2 text-center flex justify-center mt-auto" wire:loading>
                     กำลังดำเนินการ...
@@ -244,11 +270,19 @@
             <div class="setup-content min-h-[70vh] flex flex-col transition-all {{ $step == 5 ? '' : 'hidden' }}"
                 id="step-5">
                 {{-- confirm page --}}
+                
                 <h3 class="text-center text-xl my-4 pt-4 font-bold text-primary-blue"> กรุณากรอกรหัสคลินิก <br>หรือ
                     โรงพยาบาลสัตว์ </h3>
                 <p class="text-center mb-8">
                     (สอบถามที่พนักงานของคลินิก)
                 </p>
+                @if($errorStatus==1)
+                <x-badge negative label="รหัสคลินิก หรือ โรงพยาบาลสัตว์ผิด กรุณาติดต่อเจ้าหน้าที่" />
+                {{-- <x-badge negative label="{{$vet_id}}" /> --}}
+                @endif
+                @if($errorStatus==2)
+                <x-badge negative label="คุณเคยลงทะเบียนสำเร็จแล้ว ระบบจำกัดการลงทะเบียน 1 ครั้ง" />
+                @endif
                 <x-input wire:model="vet_code" label="รหัสคลินิก หรือ โรงพยาบาลสัตว์"
                     placeholder="รหัสคลินิก หรือ โรงพยาบาลสัตว์" />
 

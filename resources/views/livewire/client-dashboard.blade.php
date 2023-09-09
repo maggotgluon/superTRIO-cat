@@ -29,16 +29,16 @@
         <h3 class="text-center text-xl my-4 p-4 font-bold text-white bg-primary-blue"> การลงทะเบียนเสร็จสมบูรณ์ </h3>
         <p class="text-center">
             ท่านได้รับสิทธิ์ รับคำปรึกษา <br>
-            และเข้าร่วมโปรแกรม Super TRIO<br>
+            และเข้าร่วมโปรแกรม LOVE solution cat PLUS<br>
             โปรแกรมปกป้องสุนัขจากปรสิตร้ายที่อันตรายถึงชีวิต
         </p>
         <img class="my-4" src="{{url('/app-banner.png')}}"/>
         <p class="text-center">
-            สามารถพาน้อง {{$client->pet_name}}<br>
+            สามารถพา {{$client->pet_name}}<br>
             ขนาด {{$client->pet_weight}}<br>
             ไปรับคำปรึกษา
-            และเข้าร่วมโปรแกรม Super TRIO<br>
-            ได้ที่ {{$client->vet_id?App\Models\Vet::find($client->vet_id)->vet_name:'-'}}<br>
+            และเข้าร่วมโปรแกรม LOVE solution cat PLUS<br>
+            ได้ที่โรงพยาบาล/คลินิก {{$client->vet_id?App\Models\Vet::find($client->vet_id)->vet_name:'-'}}<br>
         </p>
         <p class="text-center text-sm text-secondary-red">
             กรุณากดรับสิทธิ์ขณะอยู่ที่คลินิกตามที่ลงทะเบียน <br>
@@ -116,9 +116,9 @@
                 <x-checkbox lg class="rounded-full" 
                     label="รับคำปรึกษาและเข้าร่วมโปรแกรม Super TRIO" description="ไม่สามารถเลือกได้" />
             </span>
-            @else
-            <span class="p-2 block"><x-checkbox lg class="rounded-full" label="รับคำปรึกษาและเข้าร่วมโปรแกรม Super TRIO"
-                    id="standard"    wire:model.lazy="offer_1" /></span>
+            {{-- @else --}}
+            {{-- <span class="p-2 block"><x-checkbox lg class="rounded-full" label="รับคำปรึกษาและเข้าร่วมโปรแกรม Super TRIO"
+                    id="standard"    wire:model.lazy="offer_1" /></span> --}}
             @endif
             <span class="p-2 block"><x-checkbox lg class="rounded-full" label="รับสิทธิ์พิเศษเพิ่มเติม - เข้าโปรแกรม 1 เดือน"
                     id="extra_1"    wire:model.lazy="offer_2" /></span>
@@ -161,7 +161,7 @@
         <p class="text-center mb-8">
             น้อง {{$client->pet_name}}<br>
             ขนาด {{$client->pet_weight}}<br>
-            ไปรับคำปรึกษา และเข้าร่วมโปรแกรม Super TRIO<br>
+            ไปรับคำปรึกษา และเข้าร่วมโปรแกรม LOVE solution cat PLUS<br>
             ที่ {{$client->vet_id?App\Models\Vet::find($client->vet_id)->vet_name:'-'}}<br>
         </p>
         <p class="text-center">
