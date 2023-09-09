@@ -362,7 +362,7 @@ class ClientRegister extends Component
         ]);
         // dd(json_decode($response->getBody()->getContents()));
         $this->token = json_decode($response->getBody()->getContents())->token;
-        // $this->refno = json_decode($response->getBody()->getContents())->refno;
+        $this->refno = json_decode($response->getBody()->getContents())->refno;
         // dd($response,$response->getBody(),$this->token );
         } catch (\Exception $e) {
             $this->error = $e->getMessage();
