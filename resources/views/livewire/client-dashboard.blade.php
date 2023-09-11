@@ -116,15 +116,15 @@
                 <x-checkbox lg class="rounded-full" 
                     label="รับคำปรึกษาและเข้าร่วมโปรแกรม Super TRIO" description="ไม่สามารถเลือกได้" />
             </span>
-            {{-- @else --}}
+            @else
             {{-- <span class="p-2 block"><x-checkbox lg class="rounded-full" label="รับคำปรึกษาและเข้าร่วมโปรแกรม Super TRIO"
                     id="standard"    wire:model.lazy="offer_1" /></span> --}}
-            @endif
-            <span class="p-2 block"><x-checkbox lg class="rounded-full" label="รับสิทธิ์พิเศษเพิ่มเติม - เข้าโปรแกรม 1 เดือน"
+                <span class="p-2 block"><x-checkbox lg class="rounded-full" label="รับสิทธิ์พิเศษเพิ่มเติม - เข้าโปรแกรม 1 เดือน"
                     id="extra_1"    wire:model.lazy="offer_2" /></span>
-            <span class="p-2 block"><x-checkbox lg class="rounded-full" value=3 label="รับสิทธิ์พิเศษเพิ่มเติม - เข้าโปรแกรม {{ $offer_3?$offer_3:'3' }} เดือน"
+                <span class="p-2 block"><x-checkbox lg class="rounded-full" value=3 label="รับสิทธิ์พิเศษเพิ่มเติม - เข้าโปรแกรม {{ $offer_3?$offer_3:'3' }} เดือน"
                     id="extra_2"    wire:model.lazy="offer_3" /></span>
-            @if ($offer_3)
+                @endif
+                            @if ($offer_3)
                 <span class="p-2 block">
                     <x-native-select label="ระยะเวลา" placeholder="เลือกระยะเวลา" 
                         :options="[

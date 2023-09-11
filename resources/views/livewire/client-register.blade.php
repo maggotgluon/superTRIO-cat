@@ -151,8 +151,8 @@
         </div>
 
         <div class="grid gap-2 pb-8">
-            <x-input wire:model.defer="pet_name" label="ชื่อสุนัข" placeholder="ชื่อแมว" />
-            <x-input wire:model.defer="pet_breed" label="ชื่อพันธุ์สุนัข" placeholder="ชื่อสายพันธุ์แมว" />
+            <x-input wire:model.defer="pet_name" label="ชื่อแมว" placeholder="ชื่อแมว" />
+            <x-input wire:model.defer="pet_breed" label="ชื่อสายพันธุ์แมว" placeholder="ชื่อสายพันธุ์แมว" />
 
             <!-- <x-native-select label="ชื่อพันธุ์สุนัข" wire:model.lazy="pet_breed" placeholder="เลือกพันธุ์สุนัข" :options="['German Shepherd','Bulldog','Labrador Retriever','Golden Retriever','French Bulldog','Siberian Husky','Poodle','Alaskan Malamute','Chihuahua','Border Collie','Afghan Hound','Airedale Terrier']" /> -->
 
