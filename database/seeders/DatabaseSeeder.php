@@ -51,10 +51,10 @@ class DatabaseSeeder extends Seeder
                     "vet_city" => $data['5'],
                     "vet_area" => $data['4'],
                     "user_id" => $data['1'],
-                    "stock_id" => $data['2'],
+                    "stock_id" => $data['1'],
                 ]);
                 $s = stock::create([
-                    "id" => $data['2'],
+                    "id" => $data['1'],
                     "total_stock" => $data['13'],
                     "stock_adj" => 0,
                 ]);
