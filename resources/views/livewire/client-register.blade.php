@@ -237,7 +237,7 @@
         @endif
 
         @if ($vet!=null)
-        <div class="mt-4 bg-primary-lite rounded-xl p-2 h-[25vh] overflow-y-scroll soft-scrollbar">
+        <div class="mt-4 bg-[#E9EFF6] rounded-xl p-2 h-[25vh] overflow-y-scroll soft-scrollbar">
             @foreach ( $vet as $vetlist )
             <div class="mb-4">
             
